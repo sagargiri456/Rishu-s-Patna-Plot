@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishu's Real Estate - Social Media Preview</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 50%, #059669 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content {
+            text-align: center;
+            z-index: 2;
+            padding: 40px;
+        }
+        
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 28px;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+        
+        .description {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    <div class="content">
+        <div class="logo">Rishu's Real Estate</div>
+        <div class="tagline">Residential Plots in Beldarichak</div>
+        <div class="description">Registry & Mutation Ready • 30ft Road Access</div>
+        <div class="highlight">Book with Just ₹51,000 Only!</div>
+    </div>
+</body>
+</html>
