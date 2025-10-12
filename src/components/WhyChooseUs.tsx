@@ -2,7 +2,6 @@ import { Card } from "@/components/ui/card";
 import {
   Award,
   ShieldCheck,
-  CreditCard,
   MapPin,
   Ban,
   Users,
@@ -19,11 +18,6 @@ const features = [
     icon: ShieldCheck,
     title: "100% Verified Plots",
     description: "Registry and Mutation ready plots, completely free from legal hassles and complications.",
-  },
-  {
-    icon: CreditCard,
-    title: "Finance Facility",
-    description: "Book your plot in easy installments with flexible payment options, completely worry-free.",
   },
   {
     icon: MapPin,
