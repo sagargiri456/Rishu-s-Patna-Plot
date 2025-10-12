@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Award, CheckCircle, Star } from "lucide-react";
@@ -51,6 +51,20 @@ const testimonials = [
 
 const ClientEngagementSection = () => {
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-change images every 3 seconds
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      setSelectedImage((prevIndex) => 
+        prevIndex === clientImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   return (
     <section className="py-20 lg:py-32 bg-gradient-to-b from-muted to-background">
@@ -73,14 +87,35 @@ const ClientEngagementSection = () => {
         {/* Client Photos Gallery */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
           {/* Main Image */}
-          <div className="animate-tilt-in">
+          <div 
+            className="animate-tilt-in"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <Card className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02] hover:-rotate-1">
-              <img
-                src={clientImages[selectedImage].src}
-                alt={clientImages[selectedImage].alt}
-                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              <div className="relative">
+                <img
+                  src={clientImages[selectedImage].src}
+                  alt={clientImages[selectedImage].alt}
+                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover transition-opacity duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                
+                {/* Auto-play indicator */}
+                <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+                  <div className="flex items-center gap-2 text-white text-xs">
+                    <div className={`w-2 h-2 rounded-full ${isPaused ? 'bg-red-400' : 'bg-green-400 animate-pulse'}`} />
+                    <span>{isPaused ? 'Paused' : 'Auto-play'}</span>
+                  </div>
+                </div>
+                
+                {/* Image counter */}
+                <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+                  <span className="text-white text-xs">
+                    {selectedImage + 1} / {clientImages.length}
+                  </span>
+                </div>
+              </div>
             </Card>
             
             {/* Thumbnail Grid */}
