@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Users, Award, CheckCircle, Star } from "lucide-react";
 
 // Import existing working images for client engagement
-import client1 from "@/assets/hero-plot.jpg";
-import client2 from "@/assets/plot-view.jpg";
-import client3 from "@/assets/road-view.jpg";
-import client4 from "@/assets/infrastructure.jpg";
-import client5 from "@/assets/hero-plot.jpg";
-import client6 from "@/assets/plot-view.jpg";
-import client7 from "@/assets/road-view.jpg";
-import client8 from "@/assets/infrastructure.jpg";
-import client9 from "@/assets/hero-plot.jpg";
-import client10 from "@/assets/plot-view.jpg";
+import client1 from "@/assets/client1.jpg";
+import client2 from "@/assets/client2.jpg";
+import client3 from "@/assets/client3.jpg";
+import client4 from "@/assets/client4.jpg";
+import client5 from "@/assets/client5.jpg";
+import client6 from "@/assets/client6.jpg";
+import client7 from "@/assets/client7.jpg";
+import client8 from "@/assets/client8.jpg";
+import client9 from "@/assets/client9.jpg";
+import client10 from "@/assets/client10.jpg";
 
 const clientImages = [
   { src: client1, alt: "Successful Property Registration - Client with Registration Office Patna" },
