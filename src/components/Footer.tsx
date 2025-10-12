@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Rishu's Real Estate</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">property lords</h3>
             <p className="text-sm sm:text-base text-primary-foreground/80 mb-3 sm:mb-4">
               Your trusted partner in finding the perfect residential plot in Patna. We're committed to transparency, quality, and your satisfaction.
             </p>
@@ -77,7 +77,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 pt-4 sm:pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
             <p className="text-xs sm:text-sm text-primary-foreground/70 text-center sm:text-left">
-              © {new Date().getFullYear()} Rishu's Real Estate. All rights reserved.
+              © {new Date().getFullYear()} property lords. All rights reserved.
             </p>
             <div className="flex gap-4 sm:gap-6">
               <a href="#" className="text-xs sm:text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
