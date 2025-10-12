@@ -7,7 +7,15 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">property lords</h3>
+            <h3 className="text-xl sm:text-2xl font-black tracking-tight mb-3 sm:mb-4">
+              <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent drop-shadow-sm">
+                PROPERTY
+              </span>
+              <span className="text-primary-foreground/60 font-light mx-1">•</span>
+              <span className="text-primary-foreground font-bold">
+                LORDS
+              </span>
+            </h3>
             <p className="text-sm sm:text-base text-primary-foreground/80 mb-3 sm:mb-4">
               Your trusted partner in finding the perfect residential plot in Patna. We're committed to transparency, quality, and your satisfaction.
             </p>
