@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle, MapPin, Navigation, Zap } from "lucide-react";
-import roadView from "@/assets/road-view.jpg";
-import plotView from "@/assets/plot-view.jpg";
-import infrastructure from "@/assets/infrastructure.jpg";
+import roadView from "@/assets/plot-4.jpg";
+import plotView from "@/assets/plot-2.jpg";
+import infrastructure from "@/assets/plot-3.jpg";
 
 const images = [
-  { src: roadView, alt: "30ft Main Road Access" },
-  { src: plotView, alt: "Plot View" },
-  { src: infrastructure, alt: "Infrastructure Development" },
+  { src: roadView, alt: "30ft Main Road Access - Wide paved road with excellent connectivity" },
+  { src: plotView, alt: "Freshly Excavated Plot - Ready for construction with proper soil preparation" },
+  { src: infrastructure, alt: "Plot with Construction Materials - Infrastructure development in progress" },
 ];
 
 const PlotsSection = () => {
