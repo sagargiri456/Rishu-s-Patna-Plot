@@ -68,7 +68,7 @@ const Header = () => {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
             <ThemeToggle />
-            <a href="tel:+919142766214">
+            <a href="tel:+918102207926">
               <Button variant="cta" size="lg" className="animate-glow-pulse">
                 <Phone className="h-5 w-5" />
                 Call Now
@@ -126,10 +126,10 @@ const Header = () => {
               >
                 Contact
               </button>
-              <a href="tel:+919142766214" className="pt-2 sm:pt-3">
+              <a href="tel:+918102207926" className="pt-2 sm:pt-3">
                 <Button variant="cta" size="lg" className="w-full text-sm sm:text-base">
                   <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
-                  Call Now: +91 9142766214
+                  Call Now: +91 8102207926
                 </Button>
               </a>
             </nav>

@@ -99,7 +99,7 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              <a href="tel:+919142766214">
+              <a href="tel:+918102207926">
                 <Button
                   variant={plan.featured ? "cta" : "default"}
                   className="w-full"

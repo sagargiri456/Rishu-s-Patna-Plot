@@ -56,10 +56,10 @@ const ContactSection = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-2 text-foreground">Call Us</h3>
                   <a
-                    href="tel:+919142766214"
+                    href="tel:+918102207926"
                     className="text-lg text-primary hover:text-primary/80 transition-colors font-semibold"
                   >
-                    +91 9142766214
+                    +91 8102207926
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">
                     Available 7 days a week, 9 AM - 8 PM
@@ -76,7 +76,7 @@ const ContactSection = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-2 text-foreground">WhatsApp</h3>
                   <a
-                    href="https://wa.me/919142766214"
+                    href="https://wa.me/918102207926"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block"

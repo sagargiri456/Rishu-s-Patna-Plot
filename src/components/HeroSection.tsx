@@ -61,9 +61,9 @@ const HeroSection = () => {
               View Available Plots
               <ArrowRight className="h-5 w-5" />
             </Button>
-            <a href="tel:+919142766214" className="w-full sm:w-auto">
+            <a href="tel:+918102207926" className="w-full sm:w-auto">
               <Button variant="cta" size="xl" className="w-full animate-glow-pulse hover:scale-110 transition-transform duration-500">
-                Call: +91 9142766214
+                Call: +91 8102207926
               </Button>
             </a>
           </div>

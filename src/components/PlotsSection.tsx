@@ -113,7 +113,7 @@ const PlotsSection = () => {
             </Card>
 
             <div className="pt-4">
-              <a href="tel:+919142766214">
+              <a href="tel:+918102207926">
                 <Button variant="cta" size="lg" className="w-full">
                   Book Your Plot Now
                 </Button>

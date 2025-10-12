@@ -99,12 +99,12 @@ const VideoMapSection = () => {
               Schedule a free site visit to see the plots for yourself. Our team will guide you through the location and answer all your questions.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <a href="tel:+919142766214" className="w-full sm:w-auto">
+              <a href="tel:+918102207926" className="w-full sm:w-auto">
                 <button className="w-full sm:w-auto bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
                   Call for Site Visit
                 </button>
               </a>
-              <a href="https://wa.me/919142766214" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a href="https://wa.me/918102207926" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <button className="w-full sm:w-auto bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-secondary/90 transition-colors">
                   WhatsApp Us
                 </button>
