@@ -24,8 +24,8 @@ const VideoMapSection = () => {
             <div className="relative">
               <div className="aspect-video w-full">
                 <iframe
-                  src="https://www.youtube.com/embed/9bZkp7q19f0?si=example&autoplay=0&mute=0&controls=1&rel=0&modestbranding=1&showinfo=0"
-                  title="Real Estate Property Tour - Beldarichak, Patna"
+                  src="https://www.youtube.com/embed/HTJFtRAUQaM?si=H8J5IELVr5KsoEna&autoplay=0&mute=0&controls=1&rel=0&modestbranding=1&showinfo=0"
+                  title="Property Tour Video - Beldarichak, Patna"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -38,10 +38,10 @@ const VideoMapSection = () => {
             </div>
             <div className="p-4 sm:p-6">
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">
-                Virtual Property Tour
+                Property Tour Video
               </h3>
               <p className="text-sm sm:text-base text-muted-foreground">
-                Take a virtual tour of our residential plots and see the infrastructure, road access, and surrounding areas.
+                Watch our exclusive property tour video showcasing the residential plots, infrastructure, and prime location in Beldarichak, Patna.
               </p>
             </div>
           </Card>
