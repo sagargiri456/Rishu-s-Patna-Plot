@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle, MapPin, Navigation, Zap } from "lucide-react";
-import roadView from "@/assets/plot-4.jpg";
-import plotView from "@/assets/plot-2.jpg";
-import infrastructure from "@/assets/plot-3.jpg";
+import roadView from "@/assets/road-view.jpg";
+import plotView from "@/assets/plot-view.jpg";
+import infrastructure from "@/assets/infrastructure.jpg";
 
 const images = [
   { src: roadView, alt: "30ft Main Road Access - Wide paved road with excellent connectivity" },
