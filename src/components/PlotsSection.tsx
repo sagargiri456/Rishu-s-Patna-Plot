@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle, MapPin, Navigation, Zap } from "lucide-react";
@@ -14,6 +14,20 @@ const images = [
 
 const PlotsSection = () => {
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-change images every 4 seconds
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      setSelectedImage((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   return (
     <section id="plots" className="py-20 lg:py-32 bg-gradient-to-b from-background to-muted">
@@ -33,13 +47,36 @@ const PlotsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center mb-16">
           {/* Image Gallery */}
-          <div className="animate-tilt-in">
+          <div 
+            className="animate-tilt-in"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] hover:-rotate-1">
-              <img
-                src={images[selectedImage].src}
-                alt={images[selectedImage].alt}
-                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
-              />
+              <div className="relative">
+                <img
+                  src={images[selectedImage].src}
+                  alt={images[selectedImage].alt}
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover transition-opacity duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                
+                {/* Auto-play indicator */}
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1">
+                  <div className="flex items-center gap-1 sm:gap-2 text-white text-xs">
+                    <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${isPaused ? 'bg-red-400' : 'bg-green-400 animate-pulse'}`} />
+                    <span className="hidden sm:inline">{isPaused ? 'Paused' : 'Auto-play'}</span>
+                    <span className="sm:hidden">{isPaused ? '⏸️' : '▶️'}</span>
+                  </div>
+                </div>
+                
+                {/* Image counter */}
+                <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1">
+                  <span className="text-white text-xs">
+                    {selectedImage + 1} / {images.length}
+                  </span>
+                </div>
+              </div>
             </Card>
             <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-4">
               {images.map((image, index) => (

@@ -70,22 +70,22 @@ const ClientEngagementSection = () => {
     <section className="py-20 lg:py-32 bg-gradient-to-b from-muted to-background">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full mb-4">
-            <Users className="h-5 w-5 text-secondary" />
-            <span className="text-sm font-medium text-secondary">Client Success Stories</span>
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-secondary/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-3 sm:mb-4">
+            <Users className="h-4 w-4 sm:h-5 sm:w-5 text-secondary" />
+            <span className="text-xs sm:text-sm font-medium text-secondary">Client Success Stories</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             Our Happy Clients
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
             See real photos of our successful property registrations and client interactions at the Registration Office Patna. 
             Every client's success is our achievement.
           </p>
         </div>
 
         {/* Client Photos Gallery */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center mb-12 lg:mb-16">
           {/* Main Image */}
           <div 
             className="animate-tilt-in"
@@ -97,20 +97,21 @@ const ClientEngagementSection = () => {
                 <img
                   src={clientImages[selectedImage].src}
                   alt={clientImages[selectedImage].alt}
-                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover transition-opacity duration-500"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-opacity duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 
                 {/* Auto-play indicator */}
-                <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
-                  <div className="flex items-center gap-2 text-white text-xs">
-                    <div className={`w-2 h-2 rounded-full ${isPaused ? 'bg-red-400' : 'bg-green-400 animate-pulse'}`} />
-                    <span>{isPaused ? 'Paused' : 'Auto-play'}</span>
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1">
+                  <div className="flex items-center gap-1 sm:gap-2 text-white text-xs">
+                    <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${isPaused ? 'bg-red-400' : 'bg-green-400 animate-pulse'}`} />
+                    <span className="hidden sm:inline">{isPaused ? 'Paused' : 'Auto-play'}</span>
+                    <span className="sm:hidden">{isPaused ? '⏸️' : '▶️'}</span>
                   </div>
                 </div>
                 
                 {/* Image counter */}
-                <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+                <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1">
                   <span className="text-white text-xs">
                     {selectedImage + 1} / {clientImages.length}
                   </span>
@@ -119,42 +120,42 @@ const ClientEngagementSection = () => {
             </Card>
             
             {/* Thumbnail Grid */}
-            <div className="grid grid-cols-5 gap-2 sm:gap-3 mt-4">
+            <div className="grid grid-cols-5 gap-1 sm:gap-2 md:gap-3 mt-3 sm:mt-4">
               {clientImages.slice(0, 5).map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
                   className={`relative overflow-hidden rounded-lg transition-all duration-300 ${
                     selectedImage === index
-                      ? "ring-2 sm:ring-4 ring-primary scale-105"
+                      ? "ring-1 sm:ring-2 md:ring-4 ring-primary scale-105"
                       : "opacity-60 hover:opacity-100 hover:scale-105"
                   }`}
                 >
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-16 sm:h-20 object-cover"
+                    className="w-full h-12 sm:h-16 md:h-20 object-cover"
                   />
                 </button>
               ))}
             </div>
             
             {/* Second Row of Thumbnails */}
-            <div className="grid grid-cols-5 gap-2 sm:gap-3 mt-2">
+            <div className="grid grid-cols-5 gap-1 sm:gap-2 md:gap-3 mt-1 sm:mt-2">
               {clientImages.slice(5, 10).map((image, index) => (
                 <button
                   key={index + 5}
                   onClick={() => setSelectedImage(index + 5)}
                   className={`relative overflow-hidden rounded-lg transition-all duration-300 ${
                     selectedImage === index + 5
-                      ? "ring-2 sm:ring-4 ring-primary scale-105"
+                      ? "ring-1 sm:ring-2 md:ring-4 ring-primary scale-105"
                       : "opacity-60 hover:opacity-100 hover:scale-105"
                   }`}
                 >
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-16 sm:h-20 object-cover"
+                    className="w-full h-12 sm:h-16 md:h-20 object-cover"
                   />
                 </button>
               ))}
@@ -162,51 +163,51 @@ const ClientEngagementSection = () => {
           </div>
 
           {/* Success Stats & Testimonials */}
-          <div className="animate-slide-up-3d space-y-6">
+          <div className="animate-slide-up-3d space-y-4 sm:space-y-6">
             {/* Success Stats */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <Card className="p-6 text-center hover:shadow-xl transition-all duration-500 hover:scale-105 bg-gradient-to-br from-primary/5 to-primary/10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+              <Card className="p-4 sm:p-6 text-center hover:shadow-xl transition-all duration-500 hover:scale-105 bg-gradient-to-br from-primary/5 to-primary/10">
                 <div className="flex items-center justify-center mb-2">
-                  <Award className="h-8 w-8 text-primary" />
+                  <Award className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
-                <p className="text-3xl font-bold text-primary mb-1">100+</p>
-                <p className="text-sm text-muted-foreground">Successful Registrations</p>
+                <p className="text-2xl sm:text-3xl font-bold text-primary mb-1">100+</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">Successful Registrations</p>
               </Card>
               
-              <Card className="p-6 text-center hover:shadow-xl transition-all duration-500 hover:scale-105 bg-gradient-to-br from-secondary/5 to-secondary/10">
+              <Card className="p-4 sm:p-6 text-center hover:shadow-xl transition-all duration-500 hover:scale-105 bg-gradient-to-br from-secondary/5 to-secondary/10">
                 <div className="flex items-center justify-center mb-2">
-                  <CheckCircle className="h-8 w-8 text-secondary" />
+                  <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-secondary" />
                 </div>
-                <p className="text-3xl font-bold text-secondary mb-1">100%</p>
-                <p className="text-sm text-muted-foreground">Client Satisfaction</p>
+                <p className="text-2xl sm:text-3xl font-bold text-secondary mb-1">100%</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">Client Satisfaction</p>
               </Card>
             </div>
 
             {/* Testimonials */}
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-foreground mb-4">What Our Clients Say</h3>
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">What Our Clients Say</h3>
               
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="p-4 hover:shadow-lg transition-all duration-500 hover:scale-105 bg-gradient-to-br from-card to-card/50">
-                  <div className="flex items-start gap-3">
+                <Card key={index} className="p-3 sm:p-4 hover:shadow-lg transition-all duration-500 hover:scale-105 bg-gradient-to-br from-card to-card/50">
+                  <div className="flex items-start gap-2 sm:gap-3">
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                        <Users className="h-5 w-5 text-primary" />
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                        <Users className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       </div>
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2">
                         <div className="flex">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                            <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
-                        <span className="text-sm text-muted-foreground">{testimonial.rating}/5</span>
+                        <span className="text-xs sm:text-sm text-muted-foreground">{testimonial.rating}/5</span>
                       </div>
-                      <p className="text-muted-foreground mb-2">"{testimonial.text}"</p>
+                      <p className="text-sm sm:text-base text-muted-foreground mb-2">"{testimonial.text}"</p>
                       <div>
-                        <p className="font-semibold text-foreground">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                        <p className="text-sm sm:text-base font-semibold text-foreground">{testimonial.name}</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.location}</p>
                       </div>
                     </div>
                   </div>
@@ -227,9 +228,9 @@ const ClientEngagementSection = () => {
 
         {/* Trust Indicators */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 bg-primary/10 px-6 py-3 rounded-full">
-            <CheckCircle className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium text-primary">
+          <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 sm:px-6 sm:py-3 rounded-full">
+            <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+            <span className="text-xs sm:text-sm font-medium text-primary">
               All photos are real client interactions at Registration Office Patna
             </span>
           </div>
