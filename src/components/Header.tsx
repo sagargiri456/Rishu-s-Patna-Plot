@@ -19,16 +19,24 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight">
-              <span className="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 bg-clip-text text-transparent drop-shadow-sm">
-                PROPERTY
-              </span>
-              <span className="text-foreground/80 font-light mx-1">•</span>
-              <span className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 dark:from-slate-300 dark:via-slate-200 dark:to-slate-100 bg-clip-text text-transparent font-bold">
-                LORDS
-              </span>
-            </h1>
+          <div className="flex items-center gap-2">
+            <img 
+              src="/logo.png" 
+              alt="Property Lords Patna Logo" 
+              className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 object-contain"
+            />
+            <div className="flex flex-col">
+              <h1 className="text-lg sm:text-xl lg:text-2xl font-black tracking-tight">
+                <span className="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 bg-clip-text text-transparent drop-shadow-sm">
+                  PROPERTY
+                </span>
+                <span className="text-foreground/80 font-light mx-1">•</span>
+                <span className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 dark:from-slate-300 dark:via-slate-200 dark:to-slate-100 bg-clip-text text-transparent font-bold">
+                  LORDS
+                </span>
+              </h1>
+              <p className="text-xs sm:text-sm text-muted-foreground font-medium">PATNA</p>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
