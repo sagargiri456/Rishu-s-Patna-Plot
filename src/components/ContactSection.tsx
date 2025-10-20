@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendContactEmail, sendEmailFallback, initEmailJS } from "@/lib/emailService";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -15,13 +16,38 @@ const ContactSection = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Received!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    
+    // Initialize EmailJS
+    initEmailJS();
+    
+    try {
+      // Try to send email using EmailJS
+      const result = await sendContactEmail(formData);
+      
+      if (result.success) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for contacting us. We'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        // Fallback to mailto if EmailJS fails
+        sendEmailFallback({ ...formData, type: 'contact' });
+        toast({
+          title: "Opening Email Client",
+          description: "Please send the pre-filled email to complete your inquiry.",
+        });
+      }
+    } catch (error) {
+      // Fallback to mailto if there's an error
+      sendEmailFallback({ ...formData, type: 'contact' });
+      toast({
+        title: "Opening Email Client",
+        description: "Please send the pre-filled email to complete your inquiry.",
+      });
+    }
   };
 
   const handleChange = (
@@ -88,6 +114,26 @@ const ContactSection = () => {
                   </a>
                   <p className="text-sm text-muted-foreground mt-3">
                     Get instant responses to your queries
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-500 hover:scale-105 hover:rotate-1 transform-gpu bg-gradient-to-br from-card to-card/50">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-secondary/10 rounded-lg">
+                  <Mail className="h-6 w-6 text-secondary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2 text-foreground">Email Us</h3>
+                  <a
+                    href="mailto:aryan.kr5802@gmail.com"
+                    className="text-lg text-primary hover:text-primary/80 transition-colors font-semibold"
+                  >
+                    aryan.kr5802@gmail.com
+                  </a>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Send us your requirements and we'll get back to you
                   </p>
                 </div>
               </div>

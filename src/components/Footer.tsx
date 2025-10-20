@@ -79,12 +79,19 @@ const Footer = () => {
                 <span>+91 8102207926</span>
               </a>
               <a
+                href="mailto:aryan.kr5802@gmail.com"
+                className="flex items-center gap-2 text-xs sm:text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+              >
+                <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
+                <span>aryan.kr5802@gmail.com</span>
+              </a>
+              <a
                 href="https://wa.me/918102207926"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-xs sm:text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
-                <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
+                <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>WhatsApp Chat</span>
               </a>
             </div>

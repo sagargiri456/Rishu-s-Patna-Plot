@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import BookingModal from "@/components/BookingModal";
 
 const plotSizes = ["600", "900", "1200", "1600", "1800", "2400", "3600"];
 
@@ -96,7 +97,11 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              <a href="tel:+918102207926">
+              <BookingModal
+                planName={plan.name}
+                planPrice={plan.price}
+                bookingAmount={plan.booking}
+              >
                 <Button
                   variant={plan.featured ? "cta" : "default"}
                   className="w-full"
@@ -104,7 +109,7 @@ const PricingSection = () => {
                 >
                   Book Now
                 </Button>
-              </a>
+              </BookingModal>
             </Card>
           ))}
         </div>
