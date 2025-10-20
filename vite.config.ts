@@ -14,4 +14,22 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: "dist",
+    sourcemap: mode === "development",
+    minify: "terser",
+    rollupOptions: {
+      // Ensure EmailJS is bundled correctly on hosted builds
+      external: [],
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          ui: ["@radix-ui/react-dialog", "@radix-ui/react-select", "@radix-ui/react-toast"],
+        },
+      },
+    },
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "lucide-react", "@emailjs/browser"],
+  },
 }));
