@@ -17,7 +17,8 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     sourcemap: mode === "development",
-    minify: "terser",
+    // Use esbuild minifier to avoid requiring 'terser' in production environments
+    minify: "esbuild",
     rollupOptions: {
       // Ensure EmailJS is bundled correctly on hosted builds
       external: [],
